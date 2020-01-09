@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         items = new ArrayList<>();
         Contacto.injectContactsFromCloud(queue,items, this);
+        Contacto.sendRequestPOST(queue,this);
 
         contactoAdaptador = new ContactoAdaptador(this, items);
         contactosList.setAdapter(contactoAdaptador);
