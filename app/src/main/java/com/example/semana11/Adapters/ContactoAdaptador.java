@@ -28,10 +28,9 @@ public class ContactoAdaptador extends ArrayAdapter<Contacto> {
             NetworkImageView image;
         }
     }
-    public ContactoAdaptador(Context context, List<Contacto> items, ImageLoader _queue) {
+    public ContactoAdaptador(Context context, List<Contacto> items) {
         super(context, 0, items);
         this.context = context;
-        this.queue = _queue;
     }
     public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
@@ -52,9 +51,9 @@ public class ContactoAdaptador extends ArrayAdapter<Contacto> {
         holder.phone.setText(rowItem.phone);
         holder.nickname.setText(rowItem.nickname);
 
-        if ( rowItem.getSmallImage() != null ) { //<----- El modelo debe poseer esta function
+        /*if ( rowItem.getSmallImage() != null ) { //<----- El modelo debe poseer esta function
             holder.image.setImageUrl(rowItem.getSmallImage(), queue);
-        }
+        }*/
 
         return convertView;
     }
